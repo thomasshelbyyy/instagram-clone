@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const UserBio = () => {
     return (
-        <div clasName="text-xs md:text-sm">
+        <div className="text-xs md:text-sm">
             <p className="font-medium">User fulname ere</p>
             <p className="text-gray-600">digital creator</p>
             <p>helllo world i am a web developer</p>

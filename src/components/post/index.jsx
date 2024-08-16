@@ -4,13 +4,12 @@ import { Link } from "react-router-dom"
 
 const Post = ({ image, username, avatar, caption, likes, comments }) => {
     return (
-        <div className="w-[460px] flex flex-col pb-4 pt-5 border-b border-gray-600">
-            <div className="flex justify-between">
+        <div className="w-full md:w-[460px] flex flex-col pb-4 pt-5 border-b border-gray-600">
+            <div className="flex justify-between px-3">
                 <div className="flex items-center gap-1 pb-2">
                     <img src={avatar} alt="" className="w-7 h-7 rounded-full" />
                     <div>
                         <p className="text-xs font-bold">{username}</p>
-
                     </div>
                     <p className="text-xs text-gray-500 font-medium">1 d</p>
                 </div>
@@ -22,7 +21,7 @@ const Post = ({ image, username, avatar, caption, likes, comments }) => {
 
             <img src={image} alt="" className="w-full rounded-sm" />
 
-            <div className="py-2 flex justify-between">
+            <div className="py-2 flex justify-between px-3">
                 <div className='flex gap-3'>
                     <button>
                         <HeartIcon className="w-6 h-6" />
@@ -41,18 +40,18 @@ const Post = ({ image, username, avatar, caption, likes, comments }) => {
 
             </div>
 
-            <button className="font-semibold text-sm cursor-pointer w-fit">{likes} likes</button>
+            <button className="font-semibold text-sm cursor-pointer w-fit px-3">{likes} likes</button>
 
-            <p className="text-sm">
+            <p className="text-sm px-3">
                 <span className="font-semibold pr-1">
                     <Link>{username}</Link>
                 </span>
                 {caption}
             </p>
 
-            <button className="text-sm text-gray-600 w-fit py-1">view all {comments} comments</button>
+            <button className="text-sm text-gray-600 w-fit py-1 px-3">view all {comments} comments</button>
 
-            <input type="text" className="text-sm bg-transparent focus:outline-none" placeholder="Add your comment" />
+            <input type="text" className="text-sm bg-transparent focus:outline-none px-3" placeholder="Add your comment" />
         </div>
     )
 }

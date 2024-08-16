@@ -51,12 +51,14 @@ The application should now be running on http://localhost:3000.
 Currently, the application consists of two static pages:
 - **Home Page**: Displays a static layout of the Instagram feed.
 - **Profile Page**: Displays a static layout of a user's profile.
+- **Message Page**: Displays a static layout of a direct message
 
 You can navigate between these pages using the browser's address bar.
 
 ## Features
 - **Home Page**: A static representation of the Instagram feed.
 - **Profile Page**: A static representation of a user's profile.
+- **Message Page**: A static representation of a direct message
 
 ## Future Improvements
 - Implement core Instagram functionalities such as posting images, liking posts, commenting, and following other users.

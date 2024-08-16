@@ -7,7 +7,7 @@ import { magPole, phillipDeus } from "../../assets/profile/images"
 const HomePage = () => {
     return (
         <MainLayout>
-            <div className="flex justify-center lg:justify-around lg:pr-[2%] items-start">
+            <div className="min-h-screen bg-black flex justify-center lg:justify-around lg:pr-[2%] items-start w-full">
                 <div className="">
                     <div className="flex gap-2">
                         <StoryPreview username="lakeng" hasNewStory={true} />
