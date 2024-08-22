@@ -1,6 +1,7 @@
 import { HeartIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import SearchHistory from "../searchHistory"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
     const [isSearchFocused, setIsSearchFocused] = useState(false)
@@ -23,7 +24,7 @@ const Navbar = () => {
                     Instagram
                     {/* <ChevronDownIcon className="w-5 h-5 text-gray-400" /> */}
                 </button>
-                <div className="flex gap-3 relative">
+                <div className="flex gap-3 relative items-center">
                     <div className="rounded-md bg-gray-600 flex">
                         <MagnifyingGlassIcon className="w-8 h-8 text-gray-200 pl-3 pr-2" />
                         <input
@@ -34,7 +35,9 @@ const Navbar = () => {
                             onBlur={handleBlur}
                         />
                     </div>
-                    <HeartIcon className="w-6 h-6" />
+                    <Link to="/message">
+                        <HeartIcon className="w-6 h-6" />
+                    </Link>
 
                     {/* Render SearchHistory below the input when focused */}
                     <SearchHistory isVisible={isSearchFocused} />

@@ -1,14 +1,16 @@
-import { Bars3Icon, HomeIcon, MagnifyingGlassIcon } from "@heroicons/react/16/solid"
-import { ChatBubbleLeftEllipsisIcon, GlobeAsiaAustraliaIcon, HeartIcon, PlayCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline"
 import { FaInstagram } from "react-icons/fa"
 import { Link, useLocation } from "react-router-dom"
-import { brookeCagle } from "../../assets/profile/images"
 import { useState } from "react"
 import SearchPanel from "../searchPanel"
+import NotificationPanel from "../notificationPanel"
+import { Bars3Icon, HomeIcon } from "@heroicons/react/16/solid"
+import { ChatBubbleLeftEllipsisIcon, GlobeAsiaAustraliaIcon, HeartIcon, MagnifyingGlassIcon, PlayCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline"
+import { brookeCagle } from "../../assets/profile/images"
 
 const Navigation = () => {
     const [smallNavigation, setSmallNavigation] = useState(false)
     const [isSearchPanelVisible, setSearchPanelVisible] = useState(false)
+    const [notificationPanelVisible, setNotificationPanelVisible] = useState(false)
     const location = useLocation()
 
     const handleSearchClicked = () => {
@@ -21,12 +23,25 @@ const Navigation = () => {
         setSmallNavigation(false)
     }
 
+    const handleNotificationClicked = ()=> {
+        setSmallNavigation(prev => !prev)
+        setNotificationPanelVisible(prev => !prev)
+    }
+
+    const handleCloseNotificationPanel = ()=> {
+        setNotificationPanelVisible(false)
+        setSmallNavigation(false)
+    }
+
     return (
         <>
             <aside className={`fixed border-r border-gray-200 bg-black hidden md:flex flex-col gap-6 text-white p-6 items-center ${location.pathname === "/message" || smallNavigation ? "lg:items-center" : "lg:w-64 lg:items-start"} h-screen transition duration-1000`}>
                 <Link className="w-full text-center flex justify-center lg:justify-start" to="/">
-                    <span className={`hidden ${location.pathname !== "/message" ? "lg:hidden" : "lg:block"} text-2xl logo`}>Instagram</span>
-                    <FaInstagram className={`w-7 h-7 text-white ${location.pathname !== "/message" && "lg:hidden"} `} />
+                    {location.pathname !== "/message" ? (
+                        <span className="text-2xl logo">Instagram</span>
+                    ) : (
+                        <FaInstagram className="w-7 h-7 text-white" />
+                    )}
                 </Link>
                 <ul className="font-semibold w-full">
                     <li className="w-full">
@@ -60,10 +75,10 @@ const Navigation = () => {
                         </Link>
                     </li>
                     <li className="w-full mt-4">
-                        <Link className="w-full px-3 py-2 rounded-md flex gap-4 items-center hover:bg-white/30" to="/">
+                        <button onClick={handleNotificationClicked} className="w-full px-3 py-2 rounded-md flex gap-4 items-center hover:bg-white/30">
                             <span><HeartIcon className="w-7 h-7" /></span>
                             {location.pathname !== "/message" && <span className={`hidden ${!smallNavigation && "lg:block"}`}>Notifications</span>}
-                        </Link>
+                        </button>
                     </li>
                     <li className="w-full mt-4">
                         <Link className="w-full px-3 py-2 rounded-md flex gap-4 items-center hover:bg-white/30" to="/">
@@ -86,6 +101,7 @@ const Navigation = () => {
                 </ul>
             </aside>
             <SearchPanel isVisible={isSearchPanelVisible} onClose={handleCloseSearchPanel} />
+            <NotificationPanel isVisible={notificationPanelVisible} onClose={handleCloseNotificationPanel} />
         </>
     )
 }
