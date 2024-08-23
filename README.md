@@ -48,7 +48,7 @@ To get started with this project, follow these steps:
 The application should now be running on http://localhost:3000.
 
 ## Usage
-Currently, the application consists of two static pages:
+Currently, the application consists of three static pages:
 - **Home Page**: Displays a static layout of the Instagram feed.
 - **Profile Page**: Displays a static layout of a user's profile.
 - **Message Page**: Displays a static layout of a direct message
@@ -58,7 +58,10 @@ You can navigate between these pages using the browser's address bar.
 ## Features
 - **Home Page**: A static representation of the Instagram feed.
 - **Profile Page**: A static representation of a user's profile.
-- **Message Page**: A static representation of a direct message
+- **Message Page**: A static representation of a direct message.
+- **Search Panel**: A Panel so user can find other user.
+- **Notification Panel**: A Panel so user can see notification.
+- **Add new post Panel**: A Panel to create new post.
 
 ## Future Improvements
 - Implement core Instagram functionalities such as posting images, liking posts, commenting, and following other users.
