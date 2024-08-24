@@ -1,9 +1,9 @@
 import { ChatBubbleOvalLeftIcon, HeartIcon } from "@heroicons/react/24/solid";
 
-const PostPreview = () => {
+const ReelsPreview = () => {
 	return (
-		<button className="w-full aspect-square bg-gray-700 relative group">
-			<div className="absolute hidden group-hover:flex hover:bg-black-8 justify-center items-center w-full h-full top-0 left-0 bg-black/50 font-semibold gap-3">
+		<button className="w-full h-full bg-gray-700 relative group">
+			<div className="absolute hidden group-hover:flex justify-center items-center bg-black/50 w-full h-full top-0 left-0 gap-4">
 				<div className="flex items-center gap-2">
 					<HeartIcon className="w-6 h-6 text-white" />
 					<span>4m</span>
@@ -17,4 +17,4 @@ const PostPreview = () => {
 	);
 };
 
-export default PostPreview;
+export default ReelsPreview;
